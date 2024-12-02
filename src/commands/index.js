@@ -25,7 +25,7 @@ import { open } from "lmdb";
     const totalKeys = DB.getKeysCount();
 
     const lastIndex = keys.slice(totalKeys - 1, totalKeys).asArray[0];
-    console.log("lastIndex: ", lastIndex);
+    console.log(lastIndex);
   } else {
     console.log("⚠️ Invalid command");
   }

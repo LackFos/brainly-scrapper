@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "start": "nodemon ./src/index.js",
-    "command": "node ./src/commands/index.js"
+    "command": "node ./src/commands/index.js",
+    "sync": "bash ./bin/sync_last_index.sh"
   },
   "author": "",
   "license": "ISC",

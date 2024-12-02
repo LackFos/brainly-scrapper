@@ -1,3 +1,4 @@
+import fs from "fs";
 import { open } from "lmdb";
 import * as cheerio from "cheerio";
 import puppeteer from "puppeteer-extra";
@@ -15,7 +16,8 @@ import pluginStealth from "puppeteer-extra-plugin-stealth";
 
   const DB = open({ path: "./src/data/index.db", compression: true });
 
-  let currentId = 30161334;
+  const lastIndexFile = "./src/data/last_index";
+  let currentId = fs.existsSync(lastIndexFile) ? Number(fs.readFileSync("./src/data/last_index", "utf-8")) : 0;
 
   while (true) {
     const html = await page.evaluate(async (currentId) => {
